@@ -1,0 +1,11 @@
+FROM mcr.microsoft.com/dotnet/aspnet:3.1
+LABEL author="Vijay"
+ENV ASPNETCORE_URLS=http://*:5000
+ENV ASPNETCORE_ENVIRONMENT=Development
+ENV AWS_DEFAULT_REGION: "us-east-1"
+ENV AWS_ACCESS_KEY_ID=AKIASI6AGBVHQCBCGHPP
+ENV AWS_SECRET_ACCESS_KEY=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
+RUN mkdir app
+COPY bin/Debug/netcoreapp3.1/publish/ app/
+WORKDIR /app
+ENTRYPOINT ["dotnet", "CatalogAPI.dll"]

@@ -32,5 +32,11 @@ namespace Training.Controllers
         {
             return await m_catalogBussinessService.GetAll(); 
         }
+
+        [HttpPost]
+        public async Task<IEnumerable<Catalog>> Add(Catalog catalog)
+        {
+            return await m_catalogBussinessService.GetAll(); 
+        }
     }
 }
