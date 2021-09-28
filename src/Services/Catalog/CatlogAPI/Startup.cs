@@ -14,7 +14,6 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Training.BussinessLayer;
 using Training.DataAccess;
-using Training.Helpers;
 using Training.Models;
 
 namespace Training
@@ -42,9 +41,7 @@ namespace Training
            var appSettingsSection = Configuration.GetSection("ServiceConfiguration");  
            services.AddAWSService<IAmazonS3>();  
            services.Configure<ServiceConfiguration>(appSettingsSection);  
-           services.AddScoped<IAWSS3FileRepository, AWSS3FileRepository>();  
-           services.AddScoped<IAWSS3BucketHelper, AWSS3BucketHelper>();  
-
+           
 
         }
 
